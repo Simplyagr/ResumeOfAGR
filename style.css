@@ -26,6 +26,9 @@ h3{
     filter: drop-shadow(6px 6px 6px black)
 }
 
+li{
+    padding: 5px;
+}
 
 .title-about{
     margin-top: 10px;
