@@ -1,0 +1,39 @@
+
+
+.whole-content{
+    height: 100%;
+    width: 800px;
+    background-color:burlywood;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    border-radius: 10%;
+}
+
+.main-title{
+    text-align: center;
+    margin-left: 125px;
+    float: left;
+}
+
+.agr-image{
+    margin-left: 100px;
+   
+   padding: 20px;
+   float: right;
+}
+
+.details{
+    margin-left: 300px;
+    width: 50%;
+}
+.title-about{
+    margin-top: 10px;
+    clear: both;
+}
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-zd42{font-family:"Times New Roman", Times, serif !important;text-align:left;vertical-align:top}
