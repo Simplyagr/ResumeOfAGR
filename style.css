@@ -1,146 +1,286 @@
-
-h3{
-    text-align: center;
-}
-.whole-content{
-    height: 100%;
-    width: 1000px;
-    background-color:burlywood;
-    margin: auto;
-    width: 70%;
-    padding: 10px;
-    border-radius: 10%;
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  background-color: #121212; /* Dark background */
+  color: #fff; /* Light text */
 }
 
-.main-title{
-    text-align: center;
-    
+.whole-content {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #1e1e1e; /* Darker background */
+  box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.5); /* Brighter and larger shadow */
+  position: relative; /* Set position to relative for absolute positioning of the blinking shadow */
 }
 
-.agr-image{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border: 5px black solid;
-    border-radius: 10%;
-    filter: drop-shadow(6px 6px 6px black)
+.whole-content.blinking-shadow::before {
+  content: "";
+  position: absolute;
+  border-radius: 20px;
+  top: 0px; /* Adjust the position of the blinking shadow */
+  left: 0px; /* Adjust the position of the blinking shadow */
+  width: calc(100%); /* Adjust the width of the blinking shadow */
+  height: calc(100%); /* Adjust the height of the blinking shadow */
+  background-color: transparent; /* Transparent background */
+  box-shadow: 0 0 70px 40px rgba(255, 255, 255, 0.5); /* Brighter and larger shadow */
+  animation: blink-shadow 4s infinite; /* Apply blink animation */
+  z-index: -1; /* Ensure the blinking shadow is behind other content */
 }
 
-li{
-    padding: 5px;
+@keyframes blink-shadow {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
 }
 
-.title-about{
-    margin-top: 10px;
-    clear: both;
+
+h3, .main-title {
+  text-align: center;
+  color: #4efac7; /* Teal */
+}
+
+.agr-image {
+  display: block;
+  margin: 20px auto;
+  border: 5px solid #4efac7; /* Teal border */
+  border-radius: 20px;
+  filter: drop-shadow(0 0 10px rgba(78, 250, 199, 0.7)); /* Soft drop shadow */
+}
+
+li {
+  padding: 10px;
+}
+
+.title-about {
+  margin-top: 20px;
+  clear: both;
 }
 
 table {
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    table-layout: fixed;
+  border: 1px solid #4efac7; /* Teal border */
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #292929; /* Darker background */
+  border: 1px solid #4efac7; /* Teal border */
+}
+
+table th, table td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #4efac7; /* Teal border */
+}
+
+table th {
+  font-size: 0.9em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
   }
-  
-  table caption {
-    font-size: 1.5em;
-    margin: .5em 0 .75em;
-  }
-  
-  table tr {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    padding: .35em;
-  }
-  
-  table th,
-  table td {
-    padding: .625em;
+
+  h2 {
     text-align: center;
   }
-  
-  table th {
-    font-size: .85em;
-    letter-spacing: .1em;
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #4efac7; /* Teal border */
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  table td {
+    border-bottom: 1px solid #4efac7; /* Teal border */
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
     text-transform: uppercase;
   }
-  
-  @media screen and (max-width: 600px) {
-    table {
-      border: 0;
-    }
-    h2{
-        text-align: center;
-    }
 
-    table caption {
-      font-size: 1.3em;
-    }
-    
-    table thead {
-      border: none;
-      clip: rect(0 0 0 0);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1px;
-    }
-    
-    table tr {
-      border-bottom: 3px solid #ddd;
-      display: block;
-      margin-bottom: .625em;
-    }
-    
-    table td {
-      border-bottom: 1px solid #ddd;
-      display: block;
-      font-size: .8em;
-      text-align: right;
-    }
-    
-    table td::before {
-      /*
-      * aria-label has no advantage, it won't be read inside a table
-      content: attr(aria-label);
-      */
-      content: attr(data-label);
-      float: left;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    
-    table td:last-child {
-      border-bottom: 0;
-    }
+  table td:last-child {
+    border-bottom: 0;
   }
-  
-  
-  footer{
-    text-align: center;
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  /* general styling */
-  body {
-    font-family: "Open Sans", sans-serif;
-    line-height: 1.25;
-  }
-@media (max-height: 600px){
-    table{
-        visibility: hidden;
-    }
 }
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-height: 600px) {
+  table {
+    visibility: hidden;
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  padding: 4px;
+  background-color: #1e1e1e; /* Darker background */
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(78, 250, 199, 0.7); /* Soft glow effect */
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  color: #4efac7; /* Teal text */
+  background-color: #121212; /* Darker background */
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.skills-section {
+  background-color: #1e1e1e; /* Darker background */
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.skills-list {
+  margin-top: 20px;
+}
+
+.skills-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-list li {
+  display: inline-block;
+  margin: 5px;
+}
+
+.skill {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #4efac7; /* Teal */
+  color: #121212; /* Dark background */
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.skill:hover {
+  background-color: #121212; /* Dark background */
+  color: #4efac7; /* Teal */
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .whole-content {
+    max-width: 80%;
+    padding: 10px;
+  }
+  .main-title {
+    font-size: 24px;
+  }
+  .agr-image {
+    width: 80px;
+    height: 80px;
+  }
+  table {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .project-card {
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .whole-content {
+    max-width: 70%;
+    padding: 5px;
+  }
+  .main-title {
+    font-size: 20px;
+  }
+  .agr-image {
+    width: 60px;
+    height: 60px;
+  }
+  table {
+    font-size: 12px;
+  }
+}
+
+/* Your existing CSS here */
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: 1fr; /* Change to a single column layout */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .skills-container {
+    gap: 10px; /* Reduce the gap between items */
+  }
+}
+
+/* Add more media queries as needed for specific devices */
