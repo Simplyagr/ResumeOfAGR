@@ -221,7 +221,7 @@ footer {
 
 @media only screen and (max-width: 768px) {
   .whole-content {
-    max-width: 80%;
+    max-width: 90%;
     padding: 10px;
   }
   .main-title {
@@ -247,7 +247,7 @@ footer {
 
 @media only screen and (max-width: 480px) {
   .whole-content {
-    max-width: 70%;
+    max-width: 90%;
     padding: 5px;
   }
   .main-title {
