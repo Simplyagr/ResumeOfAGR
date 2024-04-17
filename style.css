@@ -25,7 +25,7 @@ body {
   height: calc(100%); /* Adjust the height of the blinking shadow */
   background-color: transparent; /* Transparent background */
   box-shadow: 0 0 70px 40px rgba(255, 255, 255, 0.5); /* Brighter and larger shadow */
-  animation: blink-shadow 4s infinite; /* Apply blink animation */
+  animation: blink-shadow 2.5s infinite; /* Apply blink animation */
   z-index: -1; /* Ensure the blinking shadow is behind other content */
 }
 
